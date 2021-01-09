@@ -1,0 +1,10 @@
+export const SIGN_IN = "SIGN_IN";
+export const SIGN_OUT = "SIGN_OUT";
+export const FETCH_PROJECTS = "FETCH_PROJECTS";
+export const DELETE_PROJECT = "DELETE_PROJECT";
+export const ADD_PROJECT = "ADD_PROJECT";
+export const SELECTED_PROJECT = "SELECTED_PROJECT";
+export const SELECTED_TASK = "SELECTED_TASK";
+export const ADD_TASK = "ADD_TASK";
+export const DELETE_TASK = "DELETE_TASK";
+export const FETCH_TASKS = "FETCH_TASKS";

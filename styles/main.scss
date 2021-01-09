@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+@import "variables";
+@import "header";
+@import "mainContent";
+@import "projectList";
+@import "taskList";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: $bg-color;
+  color: $text-color;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: $link-color;
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+}
+
+button {
+  background-color: $secondary-color;
+  padding: 0.5rem 0.7rem;
+  color: $link-color;
+  border-radius: 2px;
+  font-family: "Open Sans", sans-serif;
+  cursor: pointer;
+}
+
+.center {
+  text-align: center !important;
+  width: 100% !important;
+}
