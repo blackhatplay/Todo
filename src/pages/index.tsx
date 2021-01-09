@@ -8,7 +8,7 @@ const index = () => {
     <>
       <Head>
         <title>Todo</title>
-        <meta property="og:title" content="My page title" key="title" />
+        <meta property="og:title" content="Todo" key="title" />
       </Head>
       <Header />
       <Main />
