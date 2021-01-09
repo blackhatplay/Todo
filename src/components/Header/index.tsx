@@ -6,13 +6,17 @@ import { addProject, deleteProject, fetchProjects } from '../../actions/fetch';
 
 const Header = ({ authStatus, authenticationIn, authenticationOut, addProject, fetchProjects, deleteProject }) => {
     useEffect(() => {
-        window.gapi.load('auth2', async function () {
-            const googleAuth = await window.gapi.auth2.init({
+        window.gapi.load('auth2', function () {
+            window.gapi.auth2.init({
                 client_id: '615962003694-ne1otm4nunu0tor4876cl91f6fibm8nj.apps.googleusercontent.com'
+            }).then((googleAuth) => {
+                onAuthChange(googleAuth.isSignedIn.get());
+                googleAuth.isSignedIn.listen(onAuthChange);
             });
-            onAuthChange(googleAuth.isSignedIn.get());
-            googleAuth.isSignedIn.listen(onAuthChange);
         });
+
+
+
     }, []);
 
     const onAuthChange = (status) => {
