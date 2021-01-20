@@ -46,3 +46,17 @@ button {
   text-align: center !important;
   width: 100% !important;
 }
+
+.dragging {
+  opacity: 0.5;
+}
+.dragable {
+  cursor: pointer;
+}
+.drag-to {
+  background-color: $border-color !important;
+}
+.fa-grip-vertical {
+  cursor: move;
+  margin-right: 0.5rem;
+}

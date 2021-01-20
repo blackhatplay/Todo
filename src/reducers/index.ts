@@ -1,8 +1,13 @@
 import { authenticationReducer } from "./authenticationReducer";
 import { selectedProject, selectedTask } from "./selected";
-import { fetchProjects } from "./fetchReducer";
-import { fetchTasks } from "./fetchReducer";
+import {
+  fetchProjects,
+  fetchTasks,
+  lastProjectOrderId,
+  lastTaskOrderId,
+} from "./fetchReducer";
 import { combineReducers } from "redux";
+import { setSelectedProject } from "../actions/fetch";
 
 export default combineReducers({
   authStatus: authenticationReducer,
@@ -10,4 +15,6 @@ export default combineReducers({
   selectedProject: selectedProject,
   selectedTask: selectedTask,
   tasks: fetchTasks,
+  lastProjectOrderId: lastProjectOrderId,
+  lastTaskOrderId: lastTaskOrderId,
 });
