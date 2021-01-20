@@ -22,22 +22,18 @@ const TaskList = ({ authStatus, tasks, selectedProject, addTask, deleteTask, las
     }
 
     const dragEnd = (e) => {
-        console.log('dragEnd');
         e.target.classList.remove("dragging");
         e.target.classList.remove('drag-to');
     }
     const dragEnter = (e) => {
-        console.log('dragEnter');
         e.target.classList.add('drag-to');
     }
 
     const dragLeave = (e) => {
-        console.log('dragLeave');
         e.target.classList.remove('drag-to');
     }
 
     const onDrop = (e, itemOne, itemTwo) => {
-        console.log('onDrop');
         reOrder(itemOne, itemTwo, TASKS)
         e.target.classList.remove('drag-to');
     }

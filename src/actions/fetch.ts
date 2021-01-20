@@ -38,7 +38,6 @@ export const fetchTasks = (userId, postId) => {
     const res = await jsonServer.get(
       `/tasks?userId=${userId}&postId=${postId}&_sort=order&_order=asc`
     );
-    console.log(res.data);
     dispatch({
       type: FETCH_TASKS,
       payload: res.data,
@@ -136,7 +135,6 @@ export const setSelectedTask = (id) => {
 };
 
 export const reOrder = (itemOne, itemTwo, to) => {
-  console.log(itemOne, itemTwo);
   if (to === PROJECTS) {
     return async (dispatch) => {
       dispatch({
