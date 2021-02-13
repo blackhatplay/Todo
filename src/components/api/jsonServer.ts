@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "https://todo-json-server.herokuapp.com",
+  baseURL: process.env.NEXT_PUBLIC_SERVER_HOST,
 });

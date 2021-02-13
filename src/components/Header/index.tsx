@@ -2,22 +2,20 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { authenticationIn, authenticationOut } from '../../actions/authentication';
-import { addProject, deleteProject, fetchProjects } from '../../actions/fetch';
 
-const Header = ({ authStatus, authenticationIn, authenticationOut, addProject, fetchProjects, deleteProject }) => {
+
+const Header = ({ authStatus, authenticationIn, authenticationOut }) => {
     useEffect(() => {
         window.gapi.load('auth2', function () {
             window.gapi.auth2.init({
-                client_id: '615962003694-ne1otm4nunu0tor4876cl91f6fibm8nj.apps.googleusercontent.com'
+                client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID
             }).then((googleAuth) => {
                 onAuthChange(googleAuth.isSignedIn.get());
                 googleAuth.isSignedIn.listen(onAuthChange);
             });
         });
-
-
-
     }, []);
+
 
     const onAuthChange = (status) => {
         if (status) {
@@ -64,7 +62,7 @@ const Header = ({ authStatus, authenticationIn, authenticationOut, addProject, f
                     <h1><Link href="/"><a >Todo</a></Link></h1>
                     <ul>
                         {renderedItem()}
-                        {/* <li><Link href='/about'><a>Technologies</a></Link></li> */}
+
                         <li><button onClick={() => action()} className='g-signin'>{btnText}</button></li>
                     </ul>
                 </nav>
@@ -73,8 +71,9 @@ const Header = ({ authStatus, authenticationIn, authenticationOut, addProject, f
     )
 }
 
+
 const mapStateToProps = (state) => {
     return state;
 }
 
-export default connect(mapStateToProps, { authenticationIn, authenticationOut, addProject, fetchProjects, deleteProject })(Header);
+export default connect(mapStateToProps, { authenticationIn, authenticationOut })(Header);
